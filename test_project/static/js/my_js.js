@@ -13,7 +13,7 @@ function add_input() {
 
 function remove_input() {
     let elem2 = document.querySelector('form>div:last-of-type')
-    if (elem2.parentNode.childElementCount > 3) {
+    if (elem2.parentNode.childElementCount > 4) {
         elem2.remove()
     }
 }
