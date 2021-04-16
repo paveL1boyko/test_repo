@@ -1,0 +1,10 @@
+{% extends 'test_project/index.html' %}
+{% block content %}
+    {% for item in items %}
+        <p>{{ item.data }}
+            <button><a style="text-decoration:none;" href="{% url 'test_project:delete_item' item.pk %}">Delete</a></button>
+            <button><a style="text-decoration:none;" href="{% url 'test_project:edit_items' item.pk %}">Edit</a></button></p>
+
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <a href="{% url 'get_form_data' %}">Main</a>
+    <a href="{% url 'load_data' %}">Load all Data</a>
+
+</nav>
+<form action="{% url 'get_form_data' %}" method="post">
+    <div>
+        <input type="text" name="name1">
+    </div>
+
+    <button>Save</button>
+</form>
+<button onclick="add_input()">Add</button>
+<button onclick="remove_input()">Remove last input</button>
+<script src="{% static 'js/my_js.js' %}">
+
+</script>
+</body>
+</html>
+

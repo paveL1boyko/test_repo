@@ -1,0 +1,14 @@
+{% extends 'test_project/index.html' %}
+{% block content %}
+    <form action="{% url 'test_project:edit_items' pk %}" method="post">
+        {% csrf_token %}
+        {% for name, value in items.items %}
+            <div>
+                <strong>{{ name }}</strong>
+                <input type="text" name="{{ name }}" value="{{ value }}">
+            </div>
+        {% endfor %}
+        <button type="submit">Save</button>
+    </form>
+
+{% endblock %}

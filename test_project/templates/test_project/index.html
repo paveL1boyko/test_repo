@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <a href="{% url 'test_project:get_form_data' %}">Main</a>
+    <a href="{% url 'test_project:load_data' %}">Load all Data</a>
+
+</nav>
+{% block content %}
+    <form action="{% url 'test_project:get_form_data' %}" method="post">
+        {% csrf_token %}
+        <div>
+            <strong>name1</strong>
+            <input type="text" name="name1">
+        </div>
+        <button type="submit">Save</button>
+        <button type="reset">Rest</button>
+
+    </form>
+    <button onclick="add_input()">Add new input</button>
+    <button onclick="remove_input()">Remove last input</button>
+
+{% endblock %}
+<script src="{% static 'js/my_js.js' %}">
+
+</script>
+</body>
+</html>
